@@ -8,7 +8,7 @@
 	<property name="anneeExperience">
 	<value>7</value>
 	</property>
-	<property name="cafeDeveloppeur" ref="cafe"></property>
+	<property name="cafe" ref="cafeDeveloppeur"></property>
 	</bean>
 	
 	<!-- Bean chefDeveloppeur -->
@@ -17,6 +17,7 @@
 	<property name="anneeExperience" >
 	<value>10</value>
 	</property>
+	<property name="cafe" ref="cafeChefDeveloppeur"></property>
 	</bean>
 	<!-- Bean  SocieteDevLocgiciel -->
 	<bean id="societeDevLogiciel" class="dsi.SocieteDevLogiciel">
@@ -26,8 +27,13 @@
 	<property  name="chefDeveloppeur" ref="chefDeveloppeur" ></property>
 	</bean>
 	<!--  bean Cafe -->
-	<bean id="cafe" class="dsi.Cafe">
+	<bean id="cafeDeveloppeur" class="dsi.Cafe">
 	 <property name="nom" value="Express"></property>
+	 <property name="nbSucre" value="1"></property>
+	</bean>
+	<!--  bean cafe ChefDeveloppeur-->
+	<bean id="cafeChefDeveloppeur" class="dsi.Cafe">
+	 <property name="nom" value="Directe"></property>
 	 <property name="nbSucre" value="3"></property>
 	</bean>
 
