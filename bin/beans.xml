@@ -2,28 +2,33 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
-
+    <!-- Bean Developpeur -->
 	<bean id="developpeur" class="dsi.Developpeur">
-	
 	<property name="nom" value="Olivier"></property>
 	<property name="anneeExperience">
 	<value>7</value>
 	</property>
+	<property name="cafeDeveloppeur" ref="cafe"></property>
 	</bean>
 	
+	<!-- Bean chefDeveloppeur -->
 	<bean id="chefDeveloppeur" class="dsi.Developpeur">
-
 	<property name="nom" value="Franck"></property>
 	<property name="anneeExperience" >
 	<value>10</value>
 	</property>
-
 	</bean>
-	
+	<!-- Bean  SocieteDevLocgiciel -->
 	<bean id="societeDevLogiciel" class="dsi.SocieteDevLogiciel">
 		<!-- [name]  property name  in class Developpeur  -->
 		<!-- [ref]  this property references to bean [id]  -->
 	<property  name="developpeur" ref="developpeur" ></property>
 	<property  name="chefDeveloppeur" ref="chefDeveloppeur" ></property>
 	</bean>
+	<!--  bean Cafe -->
+	<bean id="cafe" class="dsi.Cafe">
+	 <property name="nom" value="Express"></property>
+	 <property name="nbSucre" value="3"></property>
+	</bean>
+
 </beans>
