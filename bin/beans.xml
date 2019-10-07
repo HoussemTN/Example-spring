@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd 
+    http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     <!-- Bean Developpeur -->
 	<bean id="developpeur" class="dsi.Developpeur">
 	<property name="nom" value="Olivier"></property>
@@ -11,14 +18,14 @@
 	<property name="cafe" ref="cafeDeveloppeur"></property>
 	</bean>
 	
-	<!-- Bean chefDeveloppeur -->
+	<!-- Bean chefDeveloppeur-->
 	<bean id="chefDeveloppeur" class="dsi.Developpeur">
 	<property name="nom" value="Franck"></property>
 	<property name="anneeExperience" >
 	<value>10</value>
 	</property>
 	<property name="cafe" ref="cafeChefDeveloppeur"></property>
-	</bean>
+	</bean> 
 	<!-- Bean  SocieteDevLocgiciel -->
 	<bean id="societeDevLogiciel" class="dsi.SocieteDevLogiciel">
 		<!-- [name]  property name  in class Developpeur  -->
@@ -36,5 +43,6 @@
 	 <property name="nom" value="Directe"></property>
 	 <property name="nbSucre" value="3"></property>
 	</bean>
-
+	<context:component-scan base-package="demospringinjection.dsi"></context:component-scan>
+<context:annotation-config/>
 </beans>
